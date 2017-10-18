@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<meta charset='utf-8'>
+		<base href='%mainDirURI%'>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<title>ICM Tools</title>
+		<script src="web_libs\ace\ace.js" type="text/javascript" charset="utf-8"></script>
+		<!--script src="web_libs\jstree\jstree.min.js" type="text/javascript" charset="utf-8"></script-->
+		
+		<!--   Require Main.JS    -->
+		<script src=Main.js></script>
+	</head>
+	<body>
+		<div class="tab">
+		  <button class="tablinks" onclick="openTab(event, 'Geoplan')" id="defaultOpen">Geoplan</button>
+		  <button class="tablinks" onclick="openTab(event, 'Build')">Model Build</button>
+		  <button class="tablinks" onclick="openTab(event, 'Ruby CLI')">Ruby CLI</button>
+		  <button class="tablinks" onclick="openTab(event, 'JS CLI')">JS CLI</button>
+		  <button class="tablinks" onclick="ExitApp()" style="float:right;">X</button>
+		</div>
+
+		<div id="Geoplan" class="tabcontent">
+			<button class="ribButton" onclick='handle("USTrace")'>
+				<div class="image" style="background-image:url('img\\SelectionTool_UpstreamTrace.png');"></div>
+				<div class="describer">
+					<span>US Trace</span>
+				</div>
+			</button>
+			<button class="ribButton" onclick='handle("DSTrace")'>
+				<div class="image" style="background-image:url('img\\SelectionTool_DownstreamTrace.png');"></div>
+				<div class="describer">
+					<span>DS Trace</span>
+				</div>
+			</button>
+		</div>
+		
+		<!--
+			* STW Node naming _New,_JN,_PU,...
+			* Node,Link,Subcatchment
+			* 
+		-->
+		
+		<div id="Build" class="tabcontent">
+			<div class="ribbonButtons">
+				<button class="ribButton" onclick='handle("?")'>
+					<div class="image" style="background-image:url('img\\');"></div>
+					<div class="describer">
+						<span>New node</span>
+					</div>
+				</button>
+				<button class="ribButton" onclick='handle("?")'>
+					<div class="image" style="background-image:url('img\\');"></div>
+					<div class="describer">
+						<span>New junction</span>
+					</div>
+				</button>
+				<button class="ribButton" onclick='handle("?")'>
+					<div class="image" style="background-image:url('img\\');"></div>
+					<div class="describer">
+						<span>New asset</span>
+					</div>
+				</button>
+				
+				<button class="ribButton" onclick='handle("?")'>
+					<div class="image" style="background-image:url('img\\');"></div>
+					<div class="describer">
+						<span>Validate</span>
+					</div>
+				</button>
+			</div>
+		</div>
+
+		<div id="Ruby CLI" style="height:600px;" class="tabcontent">
+		    <!--textarea style="height:100%; width:100%" onkeypress="return RubyCLIKeyHandler();"></textarea-->
+		    <div id="rubyEditor" class="codeEditor getFocus" style="height:100%; width:100%"></div>
+		</div>
+		
+		<div id="JS CLI" style="height:600px;" class="tabcontent">
+		    <!--textarea style="height:100%; width:100%" onkeypress="return RubyCLIKeyHandler();"></textarea-->
+			<div id="jsEditor" class="codeEditor getFocus" style="height:100%; width:100%"></div>
+		</div>
+	</body>
+</html>
